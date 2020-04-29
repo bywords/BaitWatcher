@@ -1,0 +1,53 @@
+{
+    "name": "Clickbait Detection Chrome Extension",
+    "version": "1.0",
+    "description": "Chrome extension for clickbait detection",
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "notifications", "identity", "https://incongruent-detection-2.tk/api/articles/"],
+    "background": {
+      "scripts": ["background.js", "jquery-3.3.1.min.js"],
+      "persistent": false
+    },
+    "web_accessible_resources": [
+      "report_button.css"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://entertain.naver.com/home*", "https://entertain.naver.com/ranking*", "https://entertain.naver.com/movie*", "https://entertain.naver.com/now*", "https://entertain.naver.com/starcast*"],
+        "js": ["jquery-3.3.1.min.js", "tippy.all.min.js", "score_popup_entertain.js"]
+      },
+      {
+        "matches": ["https://entertain.naver.com/read*", "https://entertain.naver.com/ranking/read*", "https://entertain.naver.com/movie/now/*", "https://entertain.naver.com/now/read*", "https://entertain.naver.com/starcast/read*"],
+        "css": ["report_button.css"],
+        "js": ["jquery-3.3.1.min.js", "tippy.all.min.js", "report_news_entertain.js", "score_popup_entertain.js"]
+      },
+      {
+        "matches": ["https://news.naver.com/main/main.nhn*", "https://news.naver.com/main/list.nhn*", "https://news.naver.com/", "https://news.naver.com/main/home.nhn", "https://news.naver.com/main/ranking/popularDay.nhn*"],
+        "js": ["jquery-3.3.1.min.js", "tippy.all.min.js", "score_popup_base.js"]
+      },
+      {
+        "matches": ["https://news.naver.com/main/read.nhn*", "https://news.naver.com/main/ranking/read.nhn*"],
+        "css": ["report_button.css"],
+        "js": ["jquery-3.3.1.min.js", "tippy.all.min.js", "score_popup_base.js", "report_news_base.js"]
+      },
+      {
+        "matches": ["https://www.buzzfeednews.com/*", "https://www.buzzfeed.com/*"],
+        "js": ["jquery-3.3.1.min.js", "tippy.all.min.js", "score_popup_base.js"]
+      }
+    ],
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/fish_16.png",
+        "32": "images/fish_32.png",
+        "48": "images/fish_48.png",
+        "128": "images/fish_128.png"
+      }
+    },
+    "icons": {
+      "16": "images/fish_16.png",
+      "32": "images/fish_32.png",
+      "48": "images/fish_48.png",
+      "128": "images/fish_128.png"
+    },
+    "manifest_version": 2
+  }
