@@ -27,7 +27,7 @@ cycler==0.10.0
 decorator==4.3.0
 defer==1.0.6
 defusedxml==0.5.0
-Django==2.1.7
+Django==2.2.13
 django-cors-headers==2.4.0
 django-sslserver==0.20
 djangorestframework==3.9.1

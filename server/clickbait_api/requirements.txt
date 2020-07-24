@@ -1,5 +1,5 @@
 tensorflow==1.15.2
-Django==2.0.4
+Django==2.2.13
 h5py==2.7.1
 beautifulsoup4==4.6.0
 bs4==0.0.1
