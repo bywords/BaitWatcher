@@ -9,5 +9,5 @@ konlpy==0.4.4
 Keras==2.1.5
 JPype1-py3==0.5.5.2
 django-cors-headers==2.2.0
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 gensim==3.4.0
