@@ -1,4 +1,4 @@
-tensorflow==1.15.2
+tensorflow==2.7.2
 Django==2.0.4
 h5py==2.7.1
 beautifulsoup4==4.6.0
